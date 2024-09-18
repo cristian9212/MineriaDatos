@@ -75,5 +75,9 @@ def obtenerEmailsDesdeDominio(dominio):
 
 
 # Llamada a la función para obtener correos electrónicos desde un dominio específico
-# (Nota: El dominio 'stripe.com' en la URL es incorrecto y debería ser removido o reemplazado)
+# Esta interando cada dato  por me dio del for
+for i in dominios_empresas:
+    obtenerIpDesdeDominio(i)
+    obtenerEmailsDesdeDominio(i)
+
 obtenerEmailsDesdeDominio("dersa.com.co")
