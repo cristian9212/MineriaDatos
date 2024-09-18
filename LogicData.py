@@ -14,7 +14,7 @@ def obtenerIpDesdeDominio(dominio):
     if ResultadoBusqueda.json()['records'] is not None:
         # Itera sobre cada registro de tipo 'A' (dirección IP) en la respuesta
         for i in range(len(ResultadoBusqueda.json()['records']['A'])):
-            ip = ResultadoBusqueda.json()['records']['A'][i]['address']  # Obtiene la dirección IPre
+            ip = ResultadoBusqueda.json()['records']['A'][i]['address']  # Obtiene la dirección IP
             print(ResultadoBusqueda.json()['records']['A'][i]['address'])  # Imprime la IP
 
             # Realiza una solicitud a la API de IPinfo para obtener la región de la IP
@@ -55,6 +55,11 @@ dominios_empresas = [
     "dersa.com.co"
 ]
 
+
+# Esta interado cada dato por medio del bucle For
+for i in dominios_empresas:
+    obtenerIpDesdeDominio(i)
+
 # Función para obtener correos electrónicos desde un dominio
 def obtenerEmailsDesdeDominio(dominio):
     # Realiza una solicitud a la API de Hunter.io para obtener correos electrónicos del dominio
@@ -70,9 +75,5 @@ def obtenerEmailsDesdeDominio(dominio):
 
 
 # Llamada a la función para obtener correos electrónicos desde un dominio específico
-# Esta interando cada dato  por me dio del for
-for i in dominios_empresas:
-    obtenerIpDesdeDominio(i)
-    obtenerEmailsDesdeDominio(i)
 
 obtenerEmailsDesdeDominio("dersa.com.co")
