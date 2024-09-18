@@ -14,7 +14,7 @@ def obtenerIpDesdeDominio(dominio):
     if ResultadoBusqueda.json()['records'] is not None:
         # Itera sobre cada registro de tipo 'A' (dirección IP) en la respuesta
         for i in range(len(ResultadoBusqueda.json()['records']['A'])):
-            ip = ResultadoBusqueda.json()['records']['A'][i]['address']  # Obtiene la dirección IP
+            ip = ResultadoBusqueda.json()['records']['A'][i]['address']  # Obtiene la dirección IPre
             print(ResultadoBusqueda.json()['records']['A'][i]['address'])  # Imprime la IP
 
             # Realiza una solicitud a la API de IPinfo para obtener la región de la IP
@@ -54,11 +54,6 @@ dominios_empresas = [
     "conalvias.com",
     "dersa.com.co"
 ]
-
-
-# Descomentar la siguiente línea para obtener IPs y regiones para cada dominio en la lista
-for i in dominios_empresas:
-    obtenerIpDesdeDominio(i)
 
 # Función para obtener correos electrónicos desde un dominio
 def obtenerEmailsDesdeDominio(dominio):
